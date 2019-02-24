@@ -1,0 +1,8 @@
+alembic -c alembic_base.ini revision --autogenerate -m "start"
+alembic -c alembic_base.ini upgrade head
+alembic -c alembic_s1.ini revision --autogenerate -m "start"
+alembic -c alembic_s2.ini revision --autogenerate -m "start"
+alembic -c alembic_s1.ini upgrade head
+alembic -c alembic_s2.ini upgrade head
+alembic -c alembic_s1.ini revision --autogenerate -m "next"
+alembic -c alembic_s1.ini upgrade head
