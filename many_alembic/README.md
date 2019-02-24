@@ -47,3 +47,9 @@ configuration.
 3. Have the `include_object` check the schema of objects when making decisions 
 (`elif typ == 'table' and obj.schema != target_metadata.schema`). Yes, this just includes tables, an extension to 
 include indices will likely be needed.
+
+# Pros/Cons
+* Pro: Revisions are cleanly isolated by service. 
+* Pro: Updating one service does not require updating other services.
+* Cons: Isolation depends on correct setup of alembic `env.py` and DB metadata. It would only take one rogue alembic 
+setup to potentially delete all tables for all other services. 
