@@ -1,0 +1,9 @@
+
+alembic revision --autogenerate -m "start_base" --version-path base_B/versions
+alembic upgrade head
+alembic revision --autogenerate -m "start_s1" --version-path schema1_B/versions
+alembic upgrade head
+alembic revision --autogenerate -m "start_s2" --version-path schema2_B/versions
+alembic upgrade head
+alembic revision --autogenerate -m "next_s1" --version-path schema1_B/versions
+alembic upgrade head
